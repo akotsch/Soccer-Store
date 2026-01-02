@@ -1,4 +1,3 @@
-// Simple JS file (no inline scripts = safer)
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Hello World site loaded securely.");
-});
+function goToProduct(productNumber) {
+  window.location.href = `product${productNumber}.html`;
+}
