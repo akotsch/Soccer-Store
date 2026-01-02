@@ -1,85 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Ball Knowledge | Everything Soccer. One Place.</title>
+  <meta charset="UTF-8">
+  <title>Ball Knowledge | Everything Soccer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <h1>⚽ Ball Knowledge</h1>
-    <div>
-      <a href="shop.html">Shop</a>
-      <a href="brands.html">Brands</a>
-      <a href="about.html">About</a>
-    </div>
-  </nav>
+<nav>
+  <h1>⚽ Ball Knowledge</h1>
+  <div>
+    <a href="shop.html">Shop</a>
+    <a href="#features">Why Us</a>
+    <a onclick="openProfile()">Profile</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Everything Soccer. One Place.</h2>
-    <p>
-      Cleats, kits, training gear, recovery, tickets, and more — 
-      all from the best soccer stores, personalized for you.
-    </p>
-    <button onclick="goToProducts()">Start Shopping</button>
-  </section>
+<section class="hero">
+  <h2>Everything Soccer. One Place.</h2>
+  <p>
+    Cleats, kits, training, recovery, tickets —  
+    all from the best soccer stores, personalized for you.
+  </p>
+  <a href="shop.html" class="btn-light">Start Shopping</a>
+</section>
 
-  <!-- FEATURES -->
-  <section class="features">
-    <div class="feature">
-      <h3>All Stores, One Platform</h3>
-      <p>
-        Adidas, Nike, Puma, Soccer.com, Fanatics and more — 
-        no switching tabs, no searching endlessly.
-      </p>
-    </div>
+<section id="features" class="features">
+  <div class="feature">
+    <h3>All Stores United</h3>
+    <p>Nike, Adidas, Puma, Soccer.com and more — one platform.</p>
+  </div>
+  <div class="feature">
+    <h3>Personalized</h3>
+    <p>Set your size and gender once. We do the rest.</p>
+  </div>
+  <div class="feature">
+    <h3>Smart Alerts</h3>
+    <p>Never miss a drop or price cut again.</p>
+  </div>
+</section>
 
-    <div class="feature">
-      <h3>Personalized to You</h3>
-      <p>
-        Set your size, gender, and budget once. 
-        We show only what fits you.
-      </p>
-    </div>
+<footer>
+  © 2026 Ball Knowledge • Affiliate links may earn commission
+</footer>
 
-    <div class="feature">
-      <h3>Best Prices First</h3>
-      <p>
-        Sort by lowest price, newest drops, or availability.
-        Never miss a deal again.
-      </p>
-    </div>
+<!-- PROFILE MODAL -->
+<div class="modal" id="profileModal">
+  <div class="modal-content">
+    <h3>Your Profile</h3>
 
-    <div class="feature">
-      <h3>Alerts That Matter</h3>
-      <p>
-        Get notified when your size is back in stock,
-        prices drop, or new gear releases.
-      </p>
-    </div>
-  </section>
+    <select id="gender">
+      <option value="">Gender</option>
+      <option value="men">Men</option>
+      <option value="women">Women</option>
+    </select>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Built for Players. Loved by Fans.</h2>
-    <p>
-      Stop searching. Start playing.  
-      Ball Knowledge brings the entire soccer world to you.
-    </p>
-    <button onclick="goToProducts()">Create Your Profile</button>
-  </section>
+    <select id="size">
+      <option value="">Size</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+    </select>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Ball Knowledge. Affiliate links may earn commission.
-  </footer>
+    <button class="btn-dark" onclick="saveProfile()">Save</button>
+  </div>
+</div>
 
-  <!-- SCRIPT -->
-  <script src="script.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop | Ball Knowledge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+  <h1>⚽ Ball Knowledge</h1>
+  <div>
+    <a href="index.html">Home</a>
+    <a onclick="openProfile()">Profile</a>
+  </div>
+</nav>
+
+<section class="filters">
+  <select id="genderFilter">
+    <option value="">All Genders</option>
+    <option value="men">Men</option>
+    <option value="women">Women</option>
+  </select>
+
+  <select id="priceFilter">
+    <option value="">Any Price</option>
+    <option value="low">Low → High</option>
+    <option value="high">High → Low</option>
+  </select>
+
+  <button class="btn-dark" onclick="renderProducts()">Apply</button>
+</section>
+
+<section class="products" id="productList"></section>
+
+<footer>
+  Affiliate purchases help support Ball Knowledge ⚽
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+}
+
+body {
+  background: #f5f7fa;
+  color: #0b1f33;
+}
+
+nav {
+  background: white;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+nav h1 {
+  color: #0b3c5d;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #0b1f33;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 90px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0b3c5d, #1e6091);
+  color: white;
+}
+
+.hero h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  margin-bottom: 35px;
+}
+
+.btn-light, .btn-dark {
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-light {
+  background: white;
+  color: #0b3c5d;
+  text-decoration: none;
+}
+
+.btn-dark {
+  background: #0b3c5d;
+  color: white;
+}
+
+.features {
+  max-width: 1100px;
+  margin: auto;
+  padding: 70px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.feature {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.products {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.product a {
+  display: block;
+  margin-top: 10px;
+  background: #0b3c5d;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #6b7280;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+}
+const products = [
+  {
+    name: "Nike Mercurial Superfly",
+    price: 275,
+    gender: "men",
+    link: "https://nike.com?aff=ballknowledge"
+  },
+  {
+    name: "Adidas X Speedportal (Women)",
+    price: 250,
+    gender: "women",
+    link: "https://adidas.com?aff=ballknowledge"
+  },
+  {
+    name: "Puma Training Jersey",
+    price: 45,
+    gender: "men",
+    link: "https://puma.com?aff=ballknowledge"
+  }
+];
+
+function openProfile() {
+  document.getElementById("profileModal").style.display = "flex";
+}
+
+function saveProfile() {
+  localStorage.setItem("gender", document.getElementById("gender").value);
+  localStorage.setItem("size", document.getElementById("size").value);
+  document.getElementById("profileModal").style.display = "none";
+  alert("Profile saved!");
+}
+
+function renderProducts() {
+  const list = document.getElementById("productList");
+  if (!list) return;
+
+  let filtered = [...products];
+  const userGender = document.getElementById("genderFilter")?.value || localStorage.getItem("gender");
+  const priceSort = document.getElementById("priceFilter")?.value;
+
+  if (userGender) {
+    filtered = filtered.filter(p => p.gender === userGender);
+  }
+
+  if (priceSort === "low") filtered.sort((a,b) => a.price - b.price);
+  if (priceSort === "high") filtered.sort((a,b) => b.price - a.price);
+
+  list.innerHTML = "";
+  filtered.forEach(p => {
+    list.innerHTML += `
+      <div class="product">
+        <h3>${p.name}</h3>
+        <p>$${p.price}</p>
+        <a href="${p.link}" target="_blank">Buy</a>
+      </div>
+    `;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", renderProducts);
