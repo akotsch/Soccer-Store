@@ -2,23 +2,217 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ball Knowledge | Everything Soccer. One Place.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Soccer Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
 
-  <!-- Security-conscious defaults -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    body {
+      background: #f5f7fa;
+      color: #0b1f33;
+    }
 
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="styles.css" />
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    nav h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0b3c5d;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin-left: 20px;
+      color: #0b1f33;
+      font-weight: 500;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #0b3c5d, #1e6091);
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 35px;
+      opacity: 0.95;
+    }
+
+    .hero button {
+      padding: 14px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: white;
+      color: #0b3c5d;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .feature {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .feature h3 {
+      margin-bottom: 12px;
+      color: #0b3c5d;
+    }
+
+    .feature p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    /* CTA */
+    .cta {
+      background: white;
+      padding: 70px 20px;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #4b5563;
+    }
+
+    .cta button {
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background: #0b3c5d;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+  </style>
 </head>
-<body>
-  <main>
-    <h1 id="message">Soccer Store</h1>
-    <h2> This is where you will find everything for soccer</h2>
-  </main>
 
-  <!-- Link JS -->
-  <script src="script.js" defer></script>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <h1>⚽ Ball Knowledge</h1>
+    <div>
+      <a href="#">Shop</a>
+      <a href="#">Brands</a>
+      <a href="#">About</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Everything Soccer. One Place.</h2>
+    <p>
+      Cleats, kits, training gear, recovery, tickets, and more — 
+      all from the best soccer stores, personalized for you.
+    </p>
+    <button>Start Shopping</button>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature">
+      <h3>All Stores, One Platform</h3>
+      <p>
+        Adidas, Nike, Puma, Soccer.com, Fanatics and more — 
+        no switching tabs, no searching endlessly.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>Personalized to You</h3>
+      <p>
+        Set your size, gender, and budget once. 
+        We show only what fits you.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>Best Prices First</h3>
+      <p>
+        Sort by lowest price, newest drops, or availability.
+        Never miss a deal again.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>Alerts That Matter</h3>
+      <p>
+        Get notified when your size is back in stock,
+        prices drop, or new gear releases.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Built for Players. Loved by Fans.</h2>
+    <p>
+      Stop searching. Start playing.  
+      Ball Knowledge brings the entire soccer world to you.
+    </p>
+    <button>Create Your Profile</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Ball Knowledge. Affiliate links may earn commission.
+  </footer>
+
 </body>
 </html>
